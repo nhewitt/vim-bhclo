@@ -1,5 +1,7 @@
 set laststatus=2
 
+colorscheme koehler
+
 if version >= 700
     au InsertEnter * hi StatusLine term=reverse ctermbg=5 gui=undercurl guisp=Orange
     au InsertLeave * hi StatusLine term=reverse ctermfg=0 ctermbg=2 gui=bold,reverse
