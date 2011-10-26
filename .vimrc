@@ -51,3 +51,6 @@ filetype indent on
 " The following changes the default filetype back to 'tex':
 let g:tex_flavor='latex'
 
+let mapleader = ","
+" This maps the sequence comma -> v to vsplit
+:map <leader>v :vsplit<cr>

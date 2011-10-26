@@ -11,3 +11,6 @@ if !exists('s:initLatexSuite')
 endif
 
 silent! do LatexSuite User LatexSuiteFileType
+
+
+
