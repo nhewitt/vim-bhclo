@@ -30,7 +30,8 @@ set expandtab
 nmap <F3> a<C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR><Esc>
 imap <F3> <C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR>
 
-
+" next line required by omnicpp
+set nocp
 " REQUIRED. This makes vim invoke Latex-Suite when you open a tex file.
 filetype plugin on
 
@@ -54,3 +55,11 @@ let g:tex_flavor='latex'
 let mapleader = ","
 " This maps the sequence comma -> v to vsplit
 :map <leader>v :vsplit<cr>
+:map <leader>t :TlistToggle<cr>
+
+" -- ctags --
+"  " map <ctrl>+F12 to generate ctags for current folder:
+map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+<CR>
+"  " add current directory's generated tags file to available tags
+set tags+=./tags
