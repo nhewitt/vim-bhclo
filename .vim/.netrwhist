@@ -1,0 +1,7 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/Users/brian/Dropbox/stanford/inane-musings/s-111/ps4'
+let g:netrw_dirhist_2='/Users/brian/Dropbox/stanford/inane-musings/s-111'
+let g:netrw_dirhist_3='/Users/brian/Dropbox/stanford/inane-musings/s-111/ps6'
+let g:netrw_dirhist_4='/Users/brian/Dropbox/stanford'
+let g:netrw_dirhist_5='/Users/brian/Dropbox/stanford/inane-musings'
