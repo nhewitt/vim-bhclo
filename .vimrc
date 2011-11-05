@@ -60,6 +60,5 @@ let mapleader = ","
 " -- ctags --
 "  " map <ctrl>+F12 to generate ctags for current folder:
 map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
-<CR>
 "  " add current directory's generated tags file to available tags
 set tags+=./tags
