@@ -1,5 +1,4 @@
 set laststatus=2
-
 colorscheme koehler
 
 if version >= 700
@@ -56,10 +55,43 @@ let mapleader = ","
 " This maps the sequence comma -> v to vsplit
 :map <leader>v :vsplit<cr>
 :map <leader>t :TlistToggle<cr>
+:map <leader>w :w<cr>
+:map <leader>e :e! ~/.vim_runtime/vimrc<cr>
+" When vimrc is edited, reload it
+autocmd! bufwritepost vimrc source ~/.vim_runtime/vimrc
+set incsearch "Make search act like search in modern browsers
+
+"Persistent undo
+try
+    if MySys() == "windows"
+      set undodir=C:\Windows\Temp
+    else
+      set undodir=~/.vim_runtime/undodir
+    endif
+
+    set undofile
+catch
+endtry
+
+
+
 
 " -- ctags --
 "  " map <ctrl>+F12 to generate ctags for current folder:
 map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
-<CR>
 "  " add current directory's generated tags file to available tags
 set tags+=./tags
+
+set guifont=Menlo\ Regular:h23
+
+set autoread
+
+
+
+"Delete trailing white space, useful for Python ;)
+func! DeleteTrailingWS()
+  exe "normal mz"
+  %s/\s\+$//ge
+  exe "normal `z"
+endfunc
+autocmd BufWrite *.py :call DeleteTrailingWS()
