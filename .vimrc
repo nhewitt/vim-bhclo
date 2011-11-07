@@ -66,3 +66,19 @@ set tags+=./tags
 set guifont=Menlo\ Regular:h23
 
 set autoread
+
+
+" g++ compile
+map <F3> : call CompileGcc()<CR>
+func! CompileGcc()
+    exec "w"
+    exec "!g++ % -o %<"
+endfunc
+
+map <F4> :call CompileRunGcc()<CR>
+func! CompileRunGcc()
+    exec "w"
+    exec "!g++ % -o %<"
+    exec "! ./%<"
+endfunc
+" end g++ compile
