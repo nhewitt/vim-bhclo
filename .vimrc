@@ -69,13 +69,13 @@ set autoread
 
 
 " g++ compile
-map <F3> : call CompileGcc()<CR>
+map <leader>c : call CompileGcc()<CR>
 func! CompileGcc()
     exec "w"
     exec "!g++ % -o %<"
 endfunc
 
-map <F4> :call CompileRunGcc()<CR>
+map <leader>r :call CompileRunGcc()<CR>
 func! CompileRunGcc()
     exec "w"
     exec "!g++ % -o %<"
