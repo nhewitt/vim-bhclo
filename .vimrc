@@ -1,4 +1,5 @@
 set laststatus=2
+
 colorscheme koehler
 
 if version >= 700
@@ -55,26 +56,6 @@ let mapleader = ","
 " This maps the sequence comma -> v to vsplit
 :map <leader>v :vsplit<cr>
 :map <leader>t :TlistToggle<cr>
-:map <leader>w :w<cr>
-:map <leader>e :e! ~/.vim_runtime/vimrc<cr>
-" When vimrc is edited, reload it
-autocmd! bufwritepost vimrc source ~/.vim_runtime/vimrc
-set incsearch "Make search act like search in modern browsers
-
-"Persistent undo
-try
-    if MySys() == "windows"
-      set undodir=C:\Windows\Temp
-    else
-      set undodir=~/.vim_runtime/undodir
-    endif
-
-    set undofile
-catch
-endtry
-
-
-
 
 " -- ctags --
 "  " map <ctrl>+F12 to generate ctags for current folder:
@@ -85,5 +66,3 @@ set tags+=./tags
 set guifont=Menlo\ Regular:h23
 
 set autoread
-
-
