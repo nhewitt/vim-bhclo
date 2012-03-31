@@ -15,17 +15,17 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 
- set ai
+set ai
 
- syntax on
+syntax on
 
- let java_highlight_all=1
- 
- let java_highlight_functions="style"
+let java_highlight_all=1
 
- let java_allow_cpp_keywords=1
+let java_highlight_functions="style"
 
- :filetype plugin on
+let java_allow_cpp_keywords=1
+
+:filetype plugin on
  
 nmap <F3> a<C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR><Esc>
 imap <F3> <C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR>
@@ -63,7 +63,7 @@ map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 "  " add current directory's generated tags file to available tags
 set tags+=./tags
 
-set guifont=Menlo\ Regular:h23
+set guifont=Menlo\ Regular:h12
 
 set autoread
 
@@ -72,13 +72,18 @@ set autoread
 map <leader>c : call CompileGcc()<CR>
 func! CompileGcc()
     exec "w"
-    exec "!g++ % -o %<"
+    exec "!g++ -Wall % -o %<"
 endfunc
 
 map <leader>r :call CompileRunGcc()<CR>
 func! CompileRunGcc()
     exec "w"
-    exec "!g++ % -o %<"
+    exec "!g++ -Wall % -o %<"
     exec "! ./%<"
 endfunc
 " end g++ compile
+map <leader>p :call PythonRun()<CR>
+func! PythonRun()
+    exec "w"
+    exec "!python %"
+endfunc
